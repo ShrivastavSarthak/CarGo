@@ -1,0 +1,54 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.base {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  overflow: hidden;
+}
+
+/* /////////// APP CSS///////////////// */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* ////////////////// NAVBAR */
+
+.GoCar {
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+/* /////////////////////////SLIDER ///////////////// */
+.board {
+  background-color: black;
+  max-height: 600px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-left: 7.5%;
+  margin-right: 10%;
+}
+.card1 {
+  max-width: height 18rem;
+  max-width: 18rem;
+  overflow: hidden;
+}
+
+/* ///////////////// REG /////////// */
+
+.form {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+}
+
+.reg {
+}
+
+/* ///////////////// LOGIN /////////////////////// */
+
+.carTemp {
+  background-color: white;
+}

@@ -1,0 +1,35 @@
+
+/* ///////////////////////////////////  NAV BAR///////////////////// */
+.GoCar{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.NavShadow{
+    box-shadow: 0px 1px 10px black;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SLIDER<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.Slider{
+    max-height: 500px;
+}
+
+
+
+/* ///////////////////////////////////////////////// LOGIN /////////////////////////////// */
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
