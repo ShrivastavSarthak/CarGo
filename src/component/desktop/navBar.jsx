@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LoginSharpIcon from "@mui/icons-material/LoginSharp";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import ImportContactsRoundedIcon from "@mui/icons-material/ImportContactsRounded";
 import DriveEtaRoundedIcon from "@mui/icons-material/DriveEtaRounded";
 import MoreHorizTwoToneIcon from "@mui/icons-material/MoreHorizTwoTone";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import NavMob from "../mobile/navBarMobile";
 import { pink, orange, purple, red, blue } from "@mui/material/colors";
 
@@ -20,7 +20,10 @@ function Nav() {
   function handleMouseEnter() {
     setHover(true);
   }
-  
+
+  let location = useLocation();
+  const [isTrue, setTrue] = useState(false);
+
   return (
     <>
       <nav className="navbar shadow navbar-expand-lg bg-light NavShadow d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block  ">
@@ -48,7 +51,9 @@ function Nav() {
               <li className="nav-item">
                 <Link
                   to="/"
-                  className="nav-link active mx-5 shadow rounded-circle"
+                  className={`nav-link active mx-5 ${
+                    location.pathname === "/" ? "shadow " : ""
+                  }rounded-circle`}
                   aria-current="page"
                   href="#"
                 >
@@ -61,7 +66,9 @@ function Nav() {
               <li className="nav-item">
                 <Link
                   to="/About"
-                  className="nav-link active mx-5 shadow rounded-circle"
+                  className={`nav-link active mx-5 ${
+                    location.pathname === "/About" ? "shadow " : ""
+                  }rounded-circle`}
                   aria-current="page"
                 >
                   <ImportContactsRoundedIcon
@@ -71,15 +78,7 @@ function Nav() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link
-                  to="/car-Collection"
-                  className="nav-link active mx-5 shadow rounded-circle"
-                >
-                  <DriveEtaRoundedIcon
-                    fontSize="large"
-                    sx={{ color: red[500] }}
-                  />
-                </Link>
+                
               </li>
               <li className="nav-item dropdown">
                 <Link
@@ -95,7 +94,7 @@ function Nav() {
                   />
                 </Link>
                 {isHover ? (
-                  <ul class="dropdown-menu">
+                  <ul className="dropdown-menu">
                     <li>
                       <Link className="dropdown-item" href="#">
                         Loan
@@ -118,7 +117,10 @@ function Nav() {
                 ) : null}
               </li>
             </ul>
-            
+              <Link to="/login" class="d-flex btn btn-outline-dark" type="submit">
+                <LoginSharpIcon/>
+              </Link>
+
           </div>
         </div>
       </nav>

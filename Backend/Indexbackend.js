@@ -3,8 +3,11 @@ const mongoose = require("mongoose")
 const app = express()
 const connectToMongodb = require('./db')
 const port =5000;
+var cors = require("cors")
 
 
+
+app.use(cors())
 // THIS IS MIDDLEWARE
 app.use(express.json())
 

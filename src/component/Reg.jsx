@@ -1,7 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
 const Reg = () => {
+  const[credentials, SetCredentials] =useState({name:"",email: "", password: ""})
+  const navigate = useNavigate();
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const {name,email ,password} = credentials
+    const responce = await fetch("http://localhost:5000/api/auth/createuser", {
+      
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({name,email,password})
+    });
+    const json = await responce.json();
+    console.log(json);
+    if (json.success){
+      // SAVE THE AUTH TOKEN AND REDIRECT
+        localStorage.setItem("token",json.authtoken)
+        navigate("/login")
+
+    }else{
+      alert("Invalid Credentials")
+    }
+  };
+  const onChange =(e)=>{
+      SetCredentials({...credentials, [e.target.name]:e.target.value})
+  }
+
+
+
+
+
   return (
     <>
       <section class="">
@@ -24,44 +57,38 @@ const Reg = () => {
               <div class=" col-lg-6 mb-5 mb-lg-0">
                 <div class="card">
                   <div class="shadow-lg card-body py-5 px-md-5">
-                    <form action="/registration" method="POST">
-                      <div class="row">
+                    <form  onSubmit={handleSubmit}>
+                      <div>
                         <div class="col-md-6 mb-4">
-                          <div class="form-outline">
+                          <h1 className="strong">Regrestration</h1>
+                        </div>
+                        <div className="row">
+                          <div class="form-outline  ">
                             <input
                               type="text"
-                              id="form3Example1"
+                              id="name"
                               class="form-control"
-                              name="Fname"
+                              name="name"
+                              onChange={onChange}
                             />
-                            <label class="form-label" for="form3Example1">
-                              First name
+                            <label class="form-label" for="name">
+                              Your name
                             </label>
                           </div>
+                          
                         </div>
-                        <div class="col-md-6 mb-4">
-                          <div class="form-outline">
-                            <input
-                              type="text"
-                              id="form3Example2"
-                              class="form-control"
-                              name="Lname"
-                            />
-                            <label class="form-label" for="form3Example2">
-                              Last name
-                            </label>
-                          </div>
-                        </div>
+                        <div class="col-md-6 mb-4"></div>
                       </div>
 
                       <div class="form-outline mb-4">
                         <input
                           type="email"
-                          id="form3Example3"
+                          id="email"
                           class="form-control"
-                          name="Email"
+                          name="email"
+                          onChange={onChange}
                         />
-                        <label class="form-label" for="form3Example3">
+                        <label class="form-label" for="email">
                           Email address
                         </label>
                       </div>
@@ -69,11 +96,14 @@ const Reg = () => {
                       <div class="form-outline mb-4">
                         <input
                           type="password"
-                          id="form3Example4"
+                          id="password"
                           class="form-control"
                           name="password"
+                          onChange={onChange}
+                          minLength={5}
+                          required
                         />
-                        <label class="form-label" for="form3Example4">
+                        <label class="form-label" for="password">
                           Password
                         </label>
                       </div>
@@ -87,7 +117,7 @@ const Reg = () => {
 
                       <button
                         type="submit"
-                        class="btn btn-primary btn-block mb-4"
+                        class="btn btn-primary btn-block mb-4 text-center"
                       >
                         Sign up
                       </button>

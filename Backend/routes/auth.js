@@ -17,11 +17,12 @@ router.post('/createuser',[
     body('email','Invalid user').isEmail(),
     body('password','length of the password must me equal or greater then 6').isLength({min :6})
 ] ,async(req, res) => {
+  let success = false
 
   // IF THERE ARE ANY ERROR, ALL BAD REQUESTS..
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success,errors: errors.array() });
     }
     // CHECK WEATHER THE EMAIL IS EXIST OR NOT
     try {
@@ -49,8 +50,8 @@ router.post('/createuser',[
     const Auth_Token= jwt.sign(data,JWT_SECRET)
 
     
-
-        res.json(Auth_Token)
+        success = true
+        res.json({success,Auth_Token})
 
       } catch (error) {
         console.error(error.message);
@@ -81,8 +82,8 @@ router.post('/login',[
 
     const passwordcomp = await bcrypt.compare(password, user.password)
     if(!passwordcomp){
-
-      return res.status(400).json({error:"password not match"})
+      const success = false
+      return res.status(400).json({success,error:"password not match"})
     }
 
     const data = {
@@ -91,7 +92,8 @@ router.post('/login',[
       }
     }
     const Auth_Token= jwt.sign(data,JWT_SECRET)
-    res.json({Auth_Token})
+    const success =true
+    res.json({success,Auth_Token})
     
   } catch (error) {
     

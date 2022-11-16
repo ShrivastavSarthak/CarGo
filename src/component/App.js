@@ -5,7 +5,7 @@ import Log from "./Login";
 import Home from "./desktop/Home";
 import { useState } from "react";
 import Reg from "./Reg";
-import newCar from "./desktop/car";
+import BuyCars from "./mobile/cars/buyCars";
 import Footer from "./desktop/footer";
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Log />} />
-          <Route path="/registration" element={<Reg />} />
+          <Route path="/registration" element={<Reg/>} />
+          <Route path="/buycars" element={<BuyCars/>} />
           <Route path="/car-Collection" element={<newCar />} />
         </Routes>
 
