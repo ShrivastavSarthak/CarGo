@@ -7,6 +7,8 @@ import { useState } from "react";
 import Reg from "./Reg";
 import BuyCars from "./mobile/cars/buyCars";
 import Footer from "./desktop/footer";
+import SellForm from "./mobile/cars/SellForm";
+
 function App() {
   return (
     <div className="base">
@@ -20,6 +22,7 @@ function App() {
           <Route path="/registration" element={<Reg/>} />
           <Route path="/buycars" element={<BuyCars/>} />
           <Route path="/car-Collection" element={<newCar />} />
+          <Route path="/SellForm" element={<SellForm/>} />
         </Routes>
 
         <Footer />

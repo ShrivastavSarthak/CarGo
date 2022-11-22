@@ -7,7 +7,7 @@ import SellIcon from "@mui/icons-material/Sell";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import newCar from "../desktop/car";
 import BuyCars from "./cars/buyCars";
-
+import SellForm from "./cars/SellForm";
 function TopCarMob() {
   const [isTrue, SetTrue] = useState(true);
   function handleTrue() {
@@ -28,7 +28,7 @@ function TopCarMob() {
           </Link>
         </div>
         <div className="col-6 ">
-          <Link type="button" className="shadow-lg btn btn-warning btn-lg p-1 w-75">
+          <Link to="/SellForm" type="button" className="shadow-lg btn btn-warning btn-lg p-1 w-75">
             <SellIcon fontSize="large" />
             Sell Car
           </Link>
@@ -40,7 +40,7 @@ function TopCarMob() {
           </Link>
         </div>
         <div className="col-6 mt-4">
-          <Link type="button" className="shadow-lg btn btn-secondary btn-lg w-75">
+          <Link to="/buycars" type="button" className="shadow-lg btn btn-secondary btn-lg w-75">
             <CalculateIcon fontSize="large" />
             <p>Buy Used Car</p>
           </Link>

@@ -18,7 +18,7 @@ function NavMob() {
 
   return (
     <>
-      <div className="d-lg-none d-xl-block d-xl-none d-xxl-none d-xxl-block">
+      <div className="shadow-lg d-lg-none d-xl-block d-xl-none d-xxl-none d-xxl-block">
         <nav className="navbar bg-light">
           <div className="container-fluid">
             <GoCar />

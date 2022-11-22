@@ -63,10 +63,7 @@ function FooterMob() {
         </div>
 
         <div class="text-center text-dark p-3 copyright">
-          © 2020 Copyright:
-          <a class="text-dark" href="https://mdbootstrap.com/">
-            MDBootstrap.com
-          </a>
+          © 2020 Copyright:GoCar
         </div>
       </footer>
     </div>

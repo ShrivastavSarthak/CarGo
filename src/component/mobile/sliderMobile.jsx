@@ -1,66 +1,86 @@
+import { Container } from "@material-ui/core";
 import React from "react";
 import { Link } from "react-router";
 import "../Mstyles.css";
 function SliderMobile() {
+  const CardStyle = {
+    width: "24rem",
+    backgroundColor: "#E2B0FF",
+    height: "13rem",
+  };
   return (
-    <div>
-      <div
-        id="carouselExampleFade"
-        class="carousel slide carousel-fade mx-2  d-lg-none d-xl-block d-xl-none d-xxl-none d-xxl-block"
-        data-bs-touch="true"
+    <div className="d-lg-none d-xl-block d-xl-none d-xxl-none d-xxl-block">
+      <Container
+        className="w-auto p-3 h-50 shadow-lg"
+        style={{ backgroundColor: "lightblue" }}
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div className="Mobile_banner container row rounded-2 mt-2 ">
-              <div className="col-sm-1 overflow-hidden  d-flex ">
-                <center>
-                  <div className="row">
-                    <div className="col-sm-2"></div>
-                    <div className="position-absolute top-5 start-5 col-sm-2">
-                      <h1 className="text-center fs-1 fw-bolder text-light mt-5 ">
-                        Book
-                      </h1>
-                      <h1 className="text-center fs-1 fw-bolder text-light ms">
-                        Your Car Now.
-                      </h1>
-                      <button
-                        type="button"
-                        class="btn btn-outline-light btn-lg mt-5"
-                      >
-                        Check-Out
-                      </button>
-                    </div>
-                  </div>
-                </center>
+        <h4>Welcome to</h4>
+        <h1 className="bolder">GoCar</h1>
+        <div
+          id="carouselExampleInterval"
+          class="carousel slide my-5 pb-3"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class=" carousel-item active" data-bs-interval="5000">
+              <div
+                class="shadow-lg border border-dark border-2 rounded card"
+                style={CardStyle}
+              >
+                <div class="card-body">
+                  <h1 class="card-title bolder">Book</h1>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    Your car test drive.
+                  </h6>
+                  <p>Book your test drive near you. at ant time.</p>
+                  <a href="#" class="btn btn-outline-dark">
+                    Book now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <div
+                class="shadow-lg border border-dark border-2 rounded card"
+                style={CardStyle}
+              >
+                <div class="card-body">
+                  <h1 class="card-title bolder">Sell your car</h1>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    By second hand cars under best condition.
+                  </h6>
+                  <p class="card-text">
+                    Sell your car at geniun rate and all formalities will we done at your door step.
+                  </p>
+                  <a href="#" class="btn btn-outline-dark">
+                    Read more
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div
+                class="shadow-lg border border-dark border-2 rounded card"
+                style={CardStyle}
+              >
+                <div class="card-body">
+                  <h1 class="card-title">Review</h1>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    Write a review and win exctitng gifts
+                  </h6>
+                  <p class="card-text">
+                    our customer is out priority so we always do our best to fullfill our customer demands.
+                  </p>
+                  <a href="#" class="btn btn-outline-dark">
+                    Give us feeedback
+                  </a>
+                  
+                </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="..." />
-          </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleFade"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleFade"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      </Container>
     </div>
   );
 }
