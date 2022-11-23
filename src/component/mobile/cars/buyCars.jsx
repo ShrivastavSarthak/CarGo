@@ -8,7 +8,7 @@ const BuyCars = () => {
       <hr />
       <div className="row mx-2">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
-          <div className="col-sm pb-2 ">
+          <div className="col pb-3 ">
             <div class="card" style={width}>
               <img src="..." class="card-img-top" alt="..." />
               <div class="card-body">
@@ -29,7 +29,7 @@ const BuyCars = () => {
       <hr />
       <div className="row mx-2">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
-          <div className="col-sm pb-2 ">
+          <div className="col pb-3 ">
             <div class="card" style={width}>
               <img src="..." class="card-img-top" alt="..." />
               <div class="card-body">
